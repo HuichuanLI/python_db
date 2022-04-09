@@ -5,6 +5,7 @@
 # @Software: PyCharm
 import pickle
 
+from logical import LogicalBase, ValueRef
 
 
 class BinaryNode(object):
@@ -62,7 +63,7 @@ class BinaryNodeRef(ValueRef):
         })
 
     @staticmethod
-    def string_to_referent(string):
+    def string_storage_to_referent(string):
         d = pickle.loads(string)
         return BinaryNode(
             BinaryNodeRef(address=d['left']),
