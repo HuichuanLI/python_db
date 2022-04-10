@@ -1,5 +1,18 @@
 from enum import Enum
 
+import json
+
+
+class SerializedInterface:
+    json = json
+
+    @staticmethod
+    def deserialized(obj):
+        raise NotImplementedError
+
+    def serialized(self):
+        raise NotImplementedError
+
 
 # 字段类型枚举
 class FieldType(Enum):
@@ -17,8 +30,6 @@ TYPE_MAP = {
     'FLOAT': float,
     'VARCHAR': str
 }
-
-...
 
 
 # 字段主键枚举

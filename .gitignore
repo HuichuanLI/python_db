@@ -1,2 +1,6 @@
 
 .idea/
+
+huichuandb/huichuandb/__pycache__/
+
+huichuandb/huichuandb/core/__pycache__/
