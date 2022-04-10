@@ -14,8 +14,7 @@ class Table(SerializedInterface):
             # 进行字段添加
             self.add_field(field_name, field_obj)
 
-        # 添加新字段
-
+    # 添加新字段
     def add_field(self, field_name, field_obj, value=None):
 
         # 如果新添加的字段名已存在，抛出字段已存在异常
@@ -23,8 +22,8 @@ class Table(SerializedInterface):
             raise Exception('Field Exists')
 
         # 如果 field_obj 不为 Field 对象，抛出类型错误异常
-        if not isinstance(field_obj, Field):
-            raise TypeError('type error, value must be %s' % Field)
+        # if not isinstance(field_obj, Field):
+        #     raise TypeError('type error, value must be %s' % Field)
 
         # 添加字段名
         self.__field_names.append(field_name)

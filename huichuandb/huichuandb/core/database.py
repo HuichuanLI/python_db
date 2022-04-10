@@ -9,7 +9,6 @@ class Database(SerializedInterface):
         self.__table_names = []  # 所有数据表名
         self.__table_objs = {}  # 数据库表名与表对象映射
 
-
     # 创建数据表
     def create_table(self, table_name, **options):
         # 如果数据表名字已存在，抛出数据表已存在异常
@@ -22,8 +21,7 @@ class Database(SerializedInterface):
         # 新建一个数据表对象，并且与数据表名字关联绑定
         self.__table_objs[table_name] = Table(**options)
 
-        # 删除数据表
-
+    # 删除数据表
     def drop_tables(self, table_name):
         # 如果要删除的数据表不存在，则抛出数据表不存在异常
         if table_name not in self.__table_names:

@@ -3,7 +3,7 @@
 # @Author : huichuan LI
 # @File : test1.py
 # @Software: PyCharm
-from huichuandb import Engine
+from huichuandb.engine import Engine
 from huichuandb.core.field import Field, FieldType, FieldKey
 
 

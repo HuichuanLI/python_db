@@ -4,13 +4,12 @@
 # @File : test.py
 # @Software: PyCharm
 
-from huichuandb import Engine
+from huichuandb.engine import Engine
 from huichuandb.core.field import Field, FieldType, FieldKey
 
-
-e = Engine()                    # 实例化数据库引擎对象
-e.create_database('test_db')    # 创建数据库 test_db
-e.select_db('test_db')          # 选择数据库 test_db
+e = Engine()  # 实例化数据库引擎对象
+e.create_database('test_db')  # 创建数据库 test_db
+e.select_db('test_db')  # 选择数据库 test_db
 
 # 创建一张名为 t_test 的数据表，它有两个字段，一个是 f_id 和 f_name
 e.create_table(
@@ -27,3 +26,4 @@ e.insert(table_name='t_test', f_name='shiyanlou_002')
 ret = e.search('t_test')
 for row in ret:
     print(row)
+e.commit()
