@@ -51,6 +51,7 @@ class Field(SerializedInterface):
 
         return True
 
+
     # 键值约束
     def __check_keys(self, value):
 
@@ -75,6 +76,9 @@ class Field(SerializedInterface):
             raise Exception('Field Not Null')
 
         return value
+
+    def get_type(self):
+        return self.__type
 
     # 获取有多少条数据
     def length(self):

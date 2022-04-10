@@ -4,3 +4,19 @@
 huichuandb/huichuandb/__pycache__/
 
 huichuandb/huichuandb/core/__pycache__/
+
+.DS_Store
+
+source_code.zip
+
+source_code/syldb/__pycache__/
+
+source_code/syldb/case/__pycache__/
+
+source_code/syldb/core/__pycache__/
+
+source_code/syldb/parser/__pycache__/
+
+huichuandb/huichuandb/case/__pycache__/
+
+huichuandb/huichuandb/parse/__pycache__/
