@@ -20,3 +20,5 @@ source_code/syldb/parser/__pycache__/
 huichuandb/huichuandb/case/__pycache__/
 
 huichuandb/huichuandb/parse/__pycache__/
+
+*.pyc
