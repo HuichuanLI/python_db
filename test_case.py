@@ -3,16 +3,16 @@ from syldb.core.field import Field, FieldType, FieldKey
 from syldb.case import *
 
 e = Engine()  # 实例化数据库引擎对象
-e.create_database('test_db2')  # 创建数据库 test_db2
+# e.create_database('test_db2')  # 创建数据库 test_db2
 e.select_db('test_db2')  # 选择数据库 test_db2
 
 # 创建数据表 t_test
-e.create_table(
-    table_name='t_test',
-    f_id=Field(data_type=FieldType.INT, keys=[FieldKey.PRIMARY, FieldKey.INCREMENT]),
-    f_name=Field(data_type=FieldType.VARCHAR, keys=FieldKey.NOT_NULL),
-    f_age=Field(data_type=FieldType.INT, keys=FieldKey.NOT_NULL)
-)
+# e.create_table(
+#     table_name='t_test',
+#     f_id=Field(data_type=FieldType.INT, keys=[FieldKey.PRIMARY, FieldKey.INCREMENT]),
+#     f_name=Field(data_type=FieldType.VARCHAR, keys=FieldKey.NOT_NULL),
+#     f_age=Field(data_type=FieldType.INT, keys=FieldKey.NOT_NULL)
+# )
 
 # 向表 `t_test` 中添加一些数据
 e.insert(table_name='t_test', f_name='shiyanlou_001', f_age=20)

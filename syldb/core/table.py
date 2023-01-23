@@ -488,7 +488,6 @@ class Table:
         primary_key = self.get_primary_key()
 
         name_tmp = self.__get_name_tmp(**data)  # 获取待添加数据的数据字段
-
         if primary_key not in name_tmp:
             # 若主键不在待添加数据的数据字段中，则设置值为自增一
             data[primary_key] = self.__rows + 1

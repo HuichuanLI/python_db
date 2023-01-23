@@ -17,20 +17,20 @@ class Database:
         :param db_name: 数据库名称
         :param is_new: 是否新建数据库
         """
-        self.__name = db_name     # 数据库名
+        self.__name = db_name  # 数据库名
         self.__path = join_path(Config().work_path, Config().data_path, db_name)  # 数据库保存路径
-        self.__table_names = []   # 数据表名称
+        self.__table_names = []  # 数据表名称
 
         if is_new and not is_exists(self.__path):
             """
             新建数据库
             """
-            self.__path = mkdir(self.__path)    # 创建数据库存储路径
-            _ = Record(db_name=self.__name)   # 创建记录对象
-            self.__dump_database()          # 保存数据库
+            self.__path = mkdir(self.__path)  # 创建数据库存储路径
+            _ = Record(db_name=self.__name)  # 创建记录对象
+            self.__dump_database()  # 保存数据库
 
-        self.__load_database()              # 加载数据库
-        
+        self.__load_database()  # 加载数据库
+
     def create_table(self, table_name, **options):
         """
         创建数据表
@@ -51,12 +51,12 @@ class Database:
             raise Exception(f'{table_name} do not have field.')
 
         try:
-            rcd = Record(self.__name)     # 获取数据库记录对象
-            rcd.add_table_field(table_name, options)    # 添加数据表字段记录
+            rcd = Record(self.__name)  # 获取数据库记录对象
+            rcd.add_table_field(table_name, options)  # 添加数据表字段记录
 
-            _ = Table(db_name=self.__name, tb_name=table_name, is_new=True)   # 创建数据表
-            self.__table_names.append(table_name)     # 保存数据表名称
-            self.__dump_database()                  # 保存数据库
+            _ = Table(db_name=self.__name, tb_name=table_name, is_new=True)  # 创建数据表
+            self.__table_names.append(table_name)  # 保存数据表名称
+            self.__dump_database()  # 保存数据库
 
         except Exception as e:
             print(str(e))
@@ -93,7 +93,7 @@ class Database:
         if table_name not in self.__table_names:
             return False
         return True
-        
+
     def get_table_obj(self, table_name):
         """
         获取数据表对象
@@ -143,16 +143,16 @@ class Database:
         :return:
         """
         self.__load_database()
-        
+
     def __dump_database(self):
         """保存库对象"""
         # 构造数据库对象保存路径
         path = join_path(self.__path, self.__name) + '.obj'
-        dump_obj(path, self)    # 保存数据库对象
+        dump_obj(path, self)  # 保存数据库对象
 
     def __load_database(self):
         """加载库对象"""
         # 构造数据库对象保存路径
         path = join_path(self.__path, self.__name) + '.obj'
-        obj = load_obj(path)    # 加载数据库对象
+        obj = load_obj(path)  # 加载数据库对象
         self.__dict__ = obj.__dict__
